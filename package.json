@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-express-lesson",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/snjssk/nodejs-express-lesson.git",
+  "author": "snjssk <snjssk0403@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
