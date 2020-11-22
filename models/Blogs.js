@@ -1,6 +1,9 @@
+/**
+ * ModelではDBから値を取得し、Controllerに返す
+ */
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
-mongoose.connect('mongodb://localhost/lesson_db', { useNewUrlParser: true });
 
 // BlogPost スキーマの定義
 const BlogPostSchema = new Schema({
