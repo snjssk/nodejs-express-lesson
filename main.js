@@ -1,9 +1,17 @@
 const express = require('express')
-const path = require('path')
-const ejs = require('ejs')
 const app = express()
 
+const mongoose = require('mongoose')
+const path = require('path')
+const ejs = require('ejs')
 const routes = require('./routes/routes');
+
+const connectOption = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}
+
+mongoose.connect('mongodb://localhost/lesson_db', connectOption);
 
 
 // ejs setting

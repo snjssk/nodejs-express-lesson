@@ -3,16 +3,18 @@
  * 結果をViewに渡しています。
  */
 
-const express = require('express');
-const Blogs = require('../models/Blogs');
+const express = require('express')
+const mongoose = require('mongoose')
+const Blog = require('../models/Blog')
 const Views = '../views/'
 
 module.exports = {
-  doGetUser: function (req, res, next) {
-    // Blogs.getUser(id).then((result) => {
-    //   res.render(Views + 'index.ejs',{users: result});
-    // });
-    const result = Blogs.find()
+  doGetUser: async function (req, res, next) {
+    const result = await Blog.find({ title: 'aaa' }, (err, result) => {
+      if (err) throw err
+      console.log(result[0].title)
+    })
+    console.log('result:', result)
     res.render(Views + 'index.ejs',{ result: result });
   }
 }
