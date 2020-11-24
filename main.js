@@ -18,6 +18,10 @@ mongoose.connect('mongodb://localhost/lesson_db', connectOption);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
+// Body-Parser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 
